@@ -144,6 +144,16 @@ h1.glitch {
     line-height: 2.4;
 }
 
+/* Desktop: "NO MORE EXCUSES." on line 1, rest on line 2 */
+.subtitle span:first-child::after {
+    content: "\A";
+    white-space: pre;
+}
+
+.subtitle span:nth-child(2)::after {
+    content: " ";
+}
+
 /* --- Countdown --- */
 .countdown-container {
     display: flex;
@@ -518,9 +528,12 @@ footer {
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
-    /* Fix mobile background "ticking" issue - disable fixed attachment */
+    /* Fix mobile background issues */
     .hero {
         background-attachment: scroll;
+        /* Use svh to prevent resize when mobile address bar hides/shows */
+        min-height: 100svh;
+        height: 100svh;
     }
 
     h1.glitch {
@@ -531,6 +544,12 @@ footer {
     .subtitle {
         font-size: 0.75rem;
         letter-spacing: 0.2em;
+    }
+
+    /* Mobile: each phrase on its own line */
+    .subtitle span:nth-child(2)::after {
+        content: "\A";
+        white-space: pre;
     }
 
     .countdown-container {
