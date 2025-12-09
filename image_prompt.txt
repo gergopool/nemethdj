@@ -1,0 +1,12 @@
+[IMAGE PROMPT]
+Subject: A cinematic, high-contrast photo of an anonymous DJ performing in a dark, neon-lit club. The DJ is wearing a dark hoodie, face hidden in shadow, hands hovering over a futuristic mixer. 
+Lighting: Vibrant blue (#00f3ff) and purple (#bc13fe) laser lights cutting through stage fog.
+Style: Cyberpunk aesthetic, atmospheric, professional photography, 4k resolution.
+Composition: Centered subject but with negative space at the top or center for text overlay.
+Aspect Ratio: 16:9 (Landscape)
+Recommended Size: 1920x1080
+
+[INSTRUCTIONS]
+1. Generate the image using your preferred tool.
+2. Save the image as 'hero-bg.jpg'
+3. Place it in the 'dj_website' folder (same level as index.html) or update the CSS .hero class to point to it (currently it uses a dark gradient fallback).

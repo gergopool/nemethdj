@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE COUNTDOWN BEGINS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="background-overlay"></div>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="glitch">NEMETH</h1>
+            <p class="subtitle">NO MORE EXCUSES.<br>THE CLOCK IS TICKING. THE BEAT IS COMING.</p>
+            <div id="countdown" class="countdown-container">
+                <div class="time-unit">
+                    <span id="days">00</span>
+                    <span class="label">DAYS</span>
+                </div>
+                <div class="time-unit">
+                    <span id="hours">00</span>
+                    <span class="label">HOURS</span>
+                </div>
+                <div class="time-unit">
+                    <span id="minutes">00</span>
+                    <span class="label">MINS</span>
+                </div>
+                <div class="time-unit">
+                    <span id="seconds">00</span>
+                    <span class="label">SECS</span>
+                </div>
+            </div>
+            <p class="date-target">APRIL 11, 2026</p>
+        </div>
+    </header>
+
+    <section class="music-section fade-in">
+        <h2 class="section-title">THE SOUND</h2>
+        <div class="music-grid">
+            <div class="music-card" onclick="toggleAudio('track1')">
+                <div class="visualizer-placeholder">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Deep House Vibes</h3>
+                </div>
+                <audio id="track1" src="assets/audio/track1.mp3"></audio>
+                <button class="play-btn" id="btn-track1">PLAY</button>
+            </div>
+            <div class="music-card" onclick="toggleAudio('track2')">
+                <div class="visualizer-placeholder">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Techno Rhythm</h3>
+                </div>
+                <audio id="track2" src="assets/audio/track2.mp3"></audio>
+                <button class="play-btn" id="btn-track2">PLAY</button>
+            </div>
+            <div class="music-card" onclick="toggleAudio('track3')">
+                <div class="visualizer-placeholder">
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+                </div>
+                <div class="card-content">
+                    <h3>Ambient Flow</h3>
+                </div>
+                <audio id="track3" src="assets/audio/track3.mp3"></audio>
+                <button class="play-btn" id="btn-track3">PLAY</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="hype-section fade-in">
+        <div class="content-wrapper">
+            <h2>THE JOURNEY</h2>
+            <p>Every beat has a purpose. Every drop is calculated. The studio is closed, but the sound is escaping.
+                April 11th is not just a date, it's a deadline.</p>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="date">JAN 2026</span>
+                    <span class="event">First Single Teaser</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">MAR 2026</span>
+                    <span class="event">Exclusive Mix Release</span>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">APR 2026</span>
+                    <span class="event">The Debut</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section fade-in">
+        <h2>CONTACT & BOOKINGS</h2>
+        <form class="contact-form" id="contactForm" method="POST"
+              action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSe-NGChoicJsG-rNLVRyHXj6pbfVfud1GMNvlT92n1SMn0AeQ/formResponse"
+              target="hidden_iframe">
+            <input type="text" name="entry.1885722352" placeholder="YOUR NAME" required>
+            <input type="email" name="entry.1189406866" placeholder="YOUR EMAIL" required>
+            <textarea name="entry.348262536" placeholder="MESSAGE" rows="4" required></textarea>
+            <button type="submit" class="cta-btn">SEND MESSAGE</button>
+        </form>
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ANONYMOUS DJ. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
