@@ -1,0 +1,7 @@
+# Allow Google
+User-agent: Googlebot
+Allow: /
+
+# Block all other bots
+User-agent: *
+Disallow: /
