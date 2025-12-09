@@ -518,6 +518,11 @@ footer {
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
+    /* Fix mobile background "ticking" issue - disable fixed attachment */
+    .hero {
+        background-attachment: scroll;
+    }
+
     h1.glitch {
         font-size: 3.5rem;
         letter-spacing: 0.1em;
