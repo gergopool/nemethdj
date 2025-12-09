@@ -92,8 +92,6 @@ p {
     text-align: center;
     position: relative;
     padding: 2rem;
-    /* Restoring the hero image with a dark gradient overlay for text readability */
-    /* Dramatically reduced darkening for clear image visibility */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1)), url('hero-bg.webp');
     background-size: cover;
     background-position: center;
@@ -142,16 +140,21 @@ h1.glitch {
     text-shadow: 0 2px 20px rgba(0, 0, 0, 0.9);
     margin-bottom: 4rem;
     line-height: 2.4;
+    /* Flexbox for reliable line breaks */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0 0.5em;
 }
 
-/* Desktop: "NO MORE EXCUSES." on line 1, rest on line 2 */
-.subtitle span:first-child::after {
-    content: "\A";
-    white-space: pre;
+/* Desktop: "NO MORE EXCUSES." takes full width (forces line break after) */
+.subtitle span:first-child {
+    flex-basis: 100%;
 }
 
-.subtitle span:nth-child(2)::after {
-    content: " ";
+.subtitle span:nth-child(2),
+.subtitle span:nth-child(3) {
+    flex-basis: auto;
 }
 
 /* --- Countdown --- */
@@ -381,6 +384,37 @@ section {
     box-shadow: 0 0 30px rgba(41, 151, 255, 0.4);
 }
 
+/* --- Quote Section --- */
+.quote-section {
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hero-quote {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+}
+
+.hero-quote p {
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    text-transform: uppercase;
+}
+
+.hero-quote p:first-child {
+    margin-bottom: 0.5rem;
+}
+
+.hero-quote p:last-child {
+    color: var(--accent-blue);
+    text-shadow: 0 0 30px rgba(41, 151, 255, 0.4);
+}
+
 /* --- Timeline / Journey --- */
 .content-wrapper {
     text-align: center;
@@ -402,12 +436,11 @@ section {
 }
 
 .timeline {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
-    flex-wrap: wrap;
-    position: relative;
-    /* Remove old line */
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .timeline::before {
@@ -419,10 +452,8 @@ section {
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 2rem;
     border-radius: 4px;
-    width: 260px;
     text-align: left;
     transition: border-color 0.3s ease;
-    transform: none !important;
 }
 
 .timeline-item:hover {
@@ -528,9 +559,7 @@ footer {
 
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
-    /* Fix mobile background issues */
     .hero {
-        background-attachment: scroll;
         /* Use svh to prevent resize when mobile address bar hides/shows */
         min-height: 100svh;
         height: 100svh;
@@ -544,12 +573,9 @@ footer {
     .subtitle {
         font-size: 0.75rem;
         letter-spacing: 0.2em;
-    }
-
-    /* Mobile: each phrase on its own line */
-    .subtitle span:nth-child(2)::after {
-        content: "\A";
-        white-space: pre;
+        /* Mobile: stack all phrases vertically */
+        flex-direction: column;
+        gap: 0;
     }
 
     .countdown-container {
@@ -587,12 +613,16 @@ footer {
     }
 
     .timeline {
-        flex-direction: column;
-        align-items: center;
+        grid-template-columns: 1fr;
+        max-width: 400px;
     }
 
-    .timeline-item {
-        width: 100%;
-        max-width: 400px;
+    .quote-section {
+        padding: 4rem 1.5rem;
+    }
+
+    .hero-quote p {
+        font-size: 1.1rem;
+        letter-spacing: 0.1em;
     }
 }
